@@ -8,10 +8,77 @@ $animate: all 0.2s ease-in-out;
   box-sizing: border-box;
 }
 
+html {
+  line-height: 1.15;
+  text-size-adjust: 100%;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
 body {
   font-family: $font-main;
 }
 
+p {
+  margin: 0 0 15px;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+
+h2 {
+  font-size: 36px;
+  line-height: 46px;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+h4 {
+  font-size: 26px;
+  line-height: 36px;
+}
+
+a {
+  position: relative;
+  font-size: 15px;
+  font-weight: 700;
+  color: #212529;
+
+  &:before,
+  &:after {
+    transition: all .2s ease-in-out;
+  }
+}
+
+a,
+p,
+h2,
+h3,
+h4 {
+  font-family: $font-main;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* NAVIGATION */
 nav {
   height: 10vh;
   position: relative;
@@ -37,7 +104,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     margin-left: auto;
-    pointer-events: none;
+    z-index: 998;
 
     li {
       list-style: none;
@@ -157,5 +224,120 @@ nav {
       transform: translate(-5%, -50%);
       z-index: 999;
     }
+  }
+}
+
+
+/* TOUR */
+.tour {
+  padding: 30px 0 40px;
+  background: #fff;
+
+  &__container {
+    box-sizing: content-box;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__header {
+    color: #3a4151;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 420px;
+    margin: 0 auto 40px;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  & &__item {
+    padding: 5px 10px;
+    border: 2px solid;
+    margin: 5px;
+    transition: $animate;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #212529;
+    }
+
+    a {
+      text-decoration: none;
+
+    }
+
+    &:hover a {
+      color: #fff;
+    }
+  }
+
+  .orange {
+    border-color: #E88701;
+
+    a {
+      color: #E88701;
+    }
+
+    &:hover {
+      background-color: #E88701;
+    }
+  }
+
+  .blue {
+    border-color: #0B5796;
+
+    a {
+      color: #0B5796;
+    }
+
+    &:hover {
+      background-color: #0B5796;
+    }
+  }
+
+  .purple {
+    border-color: #D1013D;
+
+    a {
+      color: #D1013D;
+    }
+
+    &:hover {
+      background-color: #D1013D;
+    }
+  }
+
+  .green {
+    border-color: #019E5F;
+
+    a {
+      color: #019E5F;
+    }
+
+    &:hover {
+      background-color: #019E5F;
+    }
+  }
+
+  &__map {
+    position: relative;
+  }
+
+  .circle-pin {
+    display: block;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    cursor: pointer;
+    background-color: #212529;
+    border-radius: 50%;
   }
 }
