@@ -1,4 +1,5 @@
 import '../styles/index.scss';
+import { tns } from "../.././node_modules/tiny-slider/src/tiny-slider";
 
 const navSlide = () => {
   const navBurger = document.querySelector('.nav-burger');
@@ -30,6 +31,12 @@ $(document).ready(function () {
     window.matchMedia("(max-width: 1200px)"),
     window.matchMedia("(min-width: 1201px)")
   ]
+  var slider = tns({
+    container: '.my-slider',
+    items: 1,
+    slideBy: 'page',
+    autoplay: true
+  });
 
   $circles.each(function () {
     var circle = $(this);
