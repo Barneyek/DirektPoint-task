@@ -80,4 +80,15 @@ $(document).ready(function () {
       }
     });
   });
+
+  $(".tour__item").on("click", function () {
+    var catColor = this.className.replace('tour__item', '');
+    $circles.each(function () {
+      var circleColor = this.className;
+      circleColor = this.className.replace('circle-pin', '');
+      if (catColor !== circleColor) {
+        this.style.opacity = "0";
+      }
+    });
+  });
 });
