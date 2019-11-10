@@ -166,13 +166,10 @@ nav {
   }
 }
 
-.test {
-  height: 90vh;
-}
-
 @media screen and (max-width: 768px) {
 
   nav {
+
     .logo {
       position: fixed;
       display: flex;
@@ -230,7 +227,7 @@ nav {
 
 /* TOUR */
 .tour {
-  padding: 30px 0 40px;
+  padding: 100px 0 30px;
   background: #fff;
 
   &__container {
@@ -246,7 +243,7 @@ nav {
     text-align: center;
     padding: 0 20px;
     max-width: 420px;
-    margin: 0 auto 40px;
+    margin: 0 auto 20px;
   }
 
   &__menu {
@@ -339,5 +336,22 @@ nav {
     cursor: pointer;
     background-color: #212529;
     border-radius: 50%;
+    opacity: 0;
+
+    &.green {
+      background-color: #019E5F;
+    }
+
+    &.blue {
+      background-color: #0B5796;
+    }
+
+    &.purple {
+      background-color: #D1013D;
+    }
+
+    &.orange {
+      background-color: #E88701;
+    }
   }
 }
