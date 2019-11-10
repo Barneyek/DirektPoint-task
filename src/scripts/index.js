@@ -11,10 +11,16 @@ const navSlide = () => {
       link.classList.toggle("fade");
     });
   });
-}
+};
+
+const showAllCircles = () => {
+  var $circles = $(".circle-pin");
+  $circles.each(function () {
+    this.style.opacity = "1";
+  });
+};
 
 $(document).ready(function () {
-
   navSlide();
   var $circles = $(".circle-pin");
   var resolutions = [ // list of window.matchMedia() queries
@@ -83,6 +89,7 @@ $(document).ready(function () {
 
   $(".tour__item").on("click", function () {
     var catColor = this.className.replace('tour__item', '');
+    showAllCircles();
     $circles.each(function () {
       var circleColor = this.className;
       circleColor = this.className.replace('circle-pin', '');
@@ -90,5 +97,9 @@ $(document).ready(function () {
         this.style.opacity = "0";
       }
     });
+  });
+
+  document.getElementById("all").addEventListener('click', () => {
+    showAllCircles();
   });
 });
