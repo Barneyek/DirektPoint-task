@@ -82,8 +82,38 @@ img {
 nav {
   height: 10vh;
   position: relative;
+  font-size: 15px;
+  font-weight: 700;
+  color: #212529;
+
+  &:before,
+  &:after {
+    transition: all .2s ease-in-out;
+  }
+}
+
+a,
+p,
+h2,
+h3,
+h4 {
+  font-family: $font-main;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* NAVIGATION */
+nav {
+  height: 7vh;
   background-color: #019E5F;
   display: flex;
+  z-index: 9999;
+  width: 100%;
+  position: fixed;
+  padding: 0 5%;
 
   .logo {
     width: 40%;
@@ -169,6 +199,7 @@ nav {
 @media screen and (max-width: 768px) {
 
   nav {
+    padding: 0;
 
     .logo {
       position: fixed;
@@ -191,7 +222,7 @@ nav {
       transition: all 1s ease-out;
 
       &--open {
-        clip-path: circle(1000px at 90% 10%);
+        clip-path: circle(1500px at 90% 10%);
         pointer-events: all;
       }
 
