@@ -24,14 +24,24 @@ const showAllCircles = () => {
   });
 };
 
+const showAllCategories = () => {
+  var $circles = $(".slider__item");
+  $circles.each(function () {
+    this.style.display = "block";
+  });
+};
+
 $(document).ready(function () {
   navSlide();
 
   $('.slider').slick({
     centerPadding: '60px',
-    dots: true,
+    arrows: false,
+    dots: false,
     slidesPerRow: 4,
     rows: 2,
+    draggable: true,
+    autoplay: false,
     responsive: [
       {
         breakpoint: 768,
@@ -41,11 +51,19 @@ $(document).ready(function () {
         }
       }
     ]
+  });
 
+  var slider = $('.slider');
+  var allSlides = $('.slick-slide > div > *').clone();
+  var trigger = $('button');
+
+  trigger.on('.tour__item', function () {
+    var filterSlides = allSlides.filter('.orange');
+    slider.slick('unslick').empty().append(filterSlides).slick();
   });
 
   var $circles = $(".circle-pin");
-
+  var $attractions = $('.slider__item');
 
   $circles.each(function () {
     var circle = $(this);
@@ -64,7 +82,26 @@ $(document).ready(function () {
 
   $(".tour__item").on("click", function () {
     showAllCircles();
+    showAllCategories();
     var catColor = this.className.replace('tour__item', '');
+    // var filterClass = $(this).data('value');
+    // console.log(filterClass);
+    // $('.slider').slick('slickUnfilter');
+    // $('.slider').slick('slickFilter', filterClass);
+
+    $attractions.each(function () {
+
+      var catAttraction = this.className.replace('slider__item', '');
+      if (catColor !== catAttraction) {
+        this.style.display = "none";
+      }
+      // console.log(this);
+      // console.log(catColor);
+      // if ($(this).hasClass('green')) { 
+      //   $(this).hide();
+      //  }
+    });
+
     $circles.each(function () {
       var circleColor = this.className;
       circleColor = this.className.replace('circle-pin', '');
@@ -76,5 +113,6 @@ $(document).ready(function () {
 
   document.getElementById("all").addEventListener('click', () => {
     showAllCircles();
+    showAllCategories();
   });
 });

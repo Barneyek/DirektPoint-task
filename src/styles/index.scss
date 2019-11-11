@@ -450,8 +450,23 @@ nav {
       background-color: #fff;
       box-shadow: 1px 1px 0 0 rgba(58, 65, 81, .15);
       border: 1px solid #ccc;
-      border-bottom: 2px solid #019E5F;
       margin: 0 10px 20px;
+
+      &.purple {
+        border-bottom: 2px solid #D1013D;
+      }
+
+      &.green {
+        border-bottom: 2px solid #019E5F;
+      }
+
+      &.blue {
+        border-bottom: 2px solid #0B5796;
+      }
+
+      &.orange {
+        border-bottom: 2px solid #E88701;
+      }
     }
 
     &__img {
