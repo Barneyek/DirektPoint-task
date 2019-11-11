@@ -328,6 +328,19 @@ nav {
     position: relative;
   }
 
+  &__img-container {
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto;
+    img {
+      width: 1024px;
+      height: 680px;
+      display: block;
+      margin: 0 auto;
+      max-width: none;
+    }
+  }
+
   .circle-pin {
     display: block;
     width: 5px;
@@ -354,4 +367,11 @@ nav {
       background-color: #E88701;
     }
   }
+}
+
+@media screen and (max-width:1200px) {
+  .tour__img-container {
+    overflow-x: scroll;
+  }
+
 }
