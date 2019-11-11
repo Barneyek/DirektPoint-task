@@ -436,16 +436,22 @@ nav {
   }
 
   .slider {
-    max-width: 480px;
+    max-width: 1170px;
     margin: 0 auto;
+    padding: 0 40px;
+
+    .slick-slide>div {
+      display: flex;
+    }
 
     &__item {
       box-sizing: border-box;
       padding: 20px 20px 50px;
       background-color: #fff;
       box-shadow: 1px 1px 0 0 rgba(58, 65, 81, .15);
+      border: 1px solid #ccc;
       border-bottom: 2px solid #019E5F;
-      margin-bottom: 20px;
+      margin: 0 10px 20px;
     }
 
     &__img {
@@ -467,65 +473,6 @@ nav {
       color: #f96a32;
       display: inline-block;
     }
-  }
-}
-
-@media screen and (min-width:960px) {
-  .attractions {
-
-    &__controls {
-      display: block;
-
-      li {
-        margin: 0 20px;
-        position: absolute;
-        top: 50%;
-        display: block;
-        outline: none;
-        text-align: left;
-        z-index: 1000;
-        transform: translateY(-50%);
-        list-style: none;
-        color: #019E5F;
-      }
-
-      .prev {
-        left: 0;
-      }
-
-      .next {
-        right: 0;
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      li:hover {
-        cursor: pointer;
-      }
-    }
-
-    .slider {
-      display: grid;
-      grid-template-columns: repeat(2, calc(50% - 35px));
-      grid-row-gap: 50px;
-      max-width: 960px;
-      grid-column-gap: 70px;
-      padding: 0 90px;
-    }
-  }
-}
-
-@media screen and (min-width:1200px) {
-  .attractions .slider {
-    display: grid;
-    padding: 0;
-    max-width: 1200px;
-    grid-template-columns: repeat(3, calc(33.33% - 20px));
-    grid-row-gap: 50px;
-    grid-column-gap: 30px;
-    margin: 0 auto;
   }
 }
 

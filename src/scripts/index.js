@@ -27,7 +27,25 @@ const showAllCircles = () => {
 $(document).ready(function () {
   navSlide();
 
+  $('.slider').slick({
+    centerPadding: '60px',
+    dots: true,
+    slidesPerRow: 4,
+    rows: 2,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesPerRow: 2,
+          rows: 1,
+        }
+      }
+    ]
+
+  });
+
   var $circles = $(".circle-pin");
+
 
   $circles.each(function () {
     var circle = $(this);
