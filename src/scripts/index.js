@@ -21,8 +21,25 @@ const showAllCircles = () => {
   });
 };
 
+
 $(document).ready(function () {
+
   navSlide();
+  var slider = tns({
+    container: '.attractions__slider',
+    items: 1,
+    slideBy: 'page',
+    autoplay: false,
+    navItems: false,
+    controlsContainer: ".attractions__controls",
+    // responsive: {
+    //   768: {
+    //     items: 2,
+    //     width: '1024px'
+    //   }
+    // }
+  });
+
   var $circles = $(".circle-pin");
   var resolutions = [ // list of window.matchMedia() queries
     window.matchMedia("(max-width: 480px)"),
@@ -31,12 +48,6 @@ $(document).ready(function () {
     window.matchMedia("(max-width: 1200px)"),
     window.matchMedia("(min-width: 1201px)")
   ]
-  var slider = tns({
-    container: '.my-slider',
-    items: 1,
-    slideBy: 'page',
-    autoplay: true
-  });
 
   $circles.each(function () {
     var circle = $(this);
@@ -106,7 +117,7 @@ $(document).ready(function () {
     });
   });
 
-  document.getElementById("all").addEventListener('click', () => {
-    showAllCircles();
-  });
+  // document.getElementById("all").addEventListener('click', () => {
+  //   showAllCircles();
+  // });
 });
