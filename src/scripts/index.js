@@ -1,5 +1,8 @@
 import '../styles/index.scss';
-import { tns } from "../.././node_modules/tiny-slider/src/tiny-slider";
+import $ from "jquery";
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel';
 
 const navSlide = () => {
   const navBurger = document.querySelector('.nav-burger');
@@ -21,24 +24,8 @@ const showAllCircles = () => {
   });
 };
 
-
 $(document).ready(function () {
-
   navSlide();
-  var slider = tns({
-    container: '.attractions__slider',
-    items: 1,
-    slideBy: 'page',
-    autoplay: false,
-    navItems: false,
-    controlsContainer: ".attractions__controls",
-    // responsive: {
-    //   768: {
-    //     items: 2,
-    //     width: '1024px'
-    //   }
-    // }
-  });
 
   var $circles = $(".circle-pin");
 
@@ -47,19 +34,19 @@ $(document).ready(function () {
     circle.fadeOut(200, function () {
       const maxLeft = window.innerWidth - circle.width();
       const maxTop = window.innerHeight - circle.height();
-        var leftPos = Math.floor(Math.random() * 870);
-        var topPos = Math.floor(Math.random() * 420);
-        circle.css({
-          left: leftPos + 90,
-          top: topPos + 160,
-          opacity: 1
-        }).fadeIn(100);
+      var leftPos = Math.floor(Math.random() * 870);
+      var topPos = Math.floor(Math.random() * 420);
+      circle.css({
+        left: leftPos + 90,
+        top: topPos + 160,
+        opacity: 1
+      }).fadeIn(100);
     });
   });
 
   $(".tour__item").on("click", function () {
-    var catColor = this.className.replace('tour__item', '');
     showAllCircles();
+    var catColor = this.className.replace('tour__item', '');
     $circles.each(function () {
       var circleColor = this.className;
       circleColor = this.className.replace('circle-pin', '');
@@ -69,7 +56,7 @@ $(document).ready(function () {
     });
   });
 
-  // document.getElementById("all").addEventListener('click', () => {
-  //   showAllCircles();
-  // });
+  document.getElementById("all").addEventListener('click', () => {
+    showAllCircles();
+  });
 });
