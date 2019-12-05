@@ -3,7 +3,6 @@
 ```
 npm install
 npm i jquery
-npm i jquery
 ```
 
 ### Start Dev Server
